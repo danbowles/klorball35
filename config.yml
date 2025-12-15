@@ -1,0 +1,73 @@
+meta:
+  author: Dan
+  engine: 4.1.0
+units:
+  $default_width: cx
+  $default_height: cy
+  kx: cx
+  ky: cy
+  # m2: 2.2
+  # chocv1: 15
+  px: (kx + 4) / 2
+  py: (ky + 4) / 2
+points:
+  mirror: &mirror
+    ref: thumb_outer_single
+    distance: 1.5kx
+  key:
+    spread: kx + 0.4
+    padding: ky + 0.4
+  zones:
+    matrix:
+      rotate: 7
+      columns:
+        pinky:
+          key.stagger: -9
+        ring:
+          key:
+            spread: kx + 2
+            splay: -4
+            stagger: 12
+        middle:
+          key:
+            stagger: 6
+            splay: -3
+            spread: kx + 1.5
+        index:
+          key:
+            splay: -2.5
+            stagger: -7.5
+            spread: kx + 1.5
+        inner:
+          key.stagger: -2
+      rows:
+        top:
+        home:
+        bottom:
+    thumbs:
+      anchor:
+        ref: matrix_inner_bottom
+        # rotate: -15
+        shift: [-22, -56]
+      columns:
+        inner:
+          key:
+            splay: 0
+            # rotate: 15
+            # shift: [-3.9,-2.69]
+            # shift: [-5, -2.5]
+        neutral:
+          key:
+            splay: -15
+            # shift: [0, 0]
+            shift: [4.5, -2]
+        outer:
+          key:
+            splay: -15
+            # rotate: -15
+            shift: [9, -2.89]
+      rows:
+        single:
+outlines:
+pcbs:
+cases:
