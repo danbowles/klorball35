@@ -1,19 +1,24 @@
 meta:
-  author: Dan
-  engine: 4.1.0
+  author: danbowles
+  version: 1
+  engine: 4.2.1
 units:
+  # U: 19.05 # 19.05mm MX spacing
+  # u: 19 # 19mm MX spacing
+  # cx: 18 # 18mm Choc X spacing
+  # cy: 17 # 17mm Choc Y spacing
   $default_width: cx
   $default_height: cy
   kx: cx
   ky: cy
-  # m2: 2.2
-  # chocv1: 15
+  m2: 2.2
+  chocv1: 15
   px: (kx + 4) / 2
   py: (ky + 4) / 2
 points:
   mirror: &mirror
     ref: thumb_outer_single
-    distance: 1.5kx
+    distance: 2kx
   key:
     spread: kx + 0.4
     padding: ky + 0.4
@@ -41,33 +46,145 @@ points:
         inner:
           key.stagger: -2
       rows:
-        top:
-        home:
         bottom:
-    thumbs:
+        home:
+        top:
+    thumb:
       anchor:
-        ref: matrix_inner_bottom
-        # rotate: -15
+        ref: matrix_inner_top
         shift: [-22, -56]
       columns:
         inner:
           key:
             splay: 0
-            # rotate: 15
-            # shift: [-3.9,-2.69]
-            # shift: [-5, -2.5]
+            asym: source
         neutral:
           key:
             splay: -15
-            # shift: [0, 0]
             shift: [4.5, -2]
         outer:
           key:
             splay: -15
-            # rotate: -15
             shift: [9, -2.89]
       rows:
         single:
 outlines:
-pcbs:
-cases:
+  switches_left:
+    - what: rectangle
+      where: /(^matrix_.*)|(^thumb_.*)/
+      size: [chocv1, chocv1]
+  switches_right:
+    - what: rectangle
+      where: /^mirror_.*/
+      size: [chocv1, chocv1]
+  keycaps_left:
+    # these help snap the footprint in place
+    - what: circle
+      radius: 1
+      where: /(^matrix_.*)|(^thumb_.*)/
+    - what: rectangle
+      where: /(^matrix_.*)|(^thumb_.*)/
+      size: [kx, ky]
+      operation: stack
+  keycaps_right:
+    # these help snap the footprint in place
+    - what: circle
+      radius: 1
+      where: /(^mirror_matrix_.*)|(^mirror_thumb_.*)/
+    - what: rectangle
+      where: /(^mirror_matrix_.*)|(^mirror_thumb_.*)/
+      size: [kx, ky]
+      operation: stack
+  helios_left:
+    - what: rectangle
+      adjust.rotate: 0
+      size: [18, 33]
+      where:
+        ref: matrix_inner_top
+        shift: [22, -4]
+  helios_right:
+    - what: rectangle
+      adjust.rotate: 0
+      size: [18, 33]
+      where:
+        ref: mirror_matrix_inner_top
+        shift: [22, -4]
+  trrs_left:
+    - what: rectangle
+      size: [6, 12]
+      where:
+        ref: matrix_inner_top
+        shift: [39, 6]
+  trrs_right:
+    - what: rectangle
+      size: [6, 12]
+      where:
+        ref: mirror_matrix_inner_top
+        shift: [39, 6]
+  trackball_breakout_right:
+    - what: rectangle
+      size: [2, 22]
+      where:
+        ref: mirror_matrix_middle_bottom
+        shift: [-13, -37]
+  board_left:
+    - what: polygon
+      # fillet: 2
+      points:
+        - ref: matrix_pinky_top
+          shift: [-0.5kx, 0.5ky]
+        - ref: matrix_ring_top
+          shift: [-0.5kx, 0.5ky]
+          # shift: [-kx-px,py]
+        - ref: matrix_middle_top
+          shift: [-0.5kx, 0.5ky]
+        - ref: matrix_middle_top
+          shift: [0.5kx, 0.5ky]
+          # shift: [0,py+5]
+        - ref: matrix_inner_top
+          shift: [2.5kx, 0.5ky]
+        - ref: thumb_outer_single
+          shift: [0.5kx, 0]
+          # shift: [kx+kx,0]
+        # - ref: matrix_pinky_bottom
+        #   shift: [-kx-px, -py]
+        # - ref: matrix_pinky_top
+        #   shift: [-kx-px, py]
+        # - ref: matrix_pinky_top
+        #   shift: [px, py]
+        # - ref: matrix_middle_top
+        #   shift: [-kx-px-4.5, py]
+        # - ref: matrix_middle_top
+        #   shift: [32.8, py]
+        # - ref: matrix_index_top
+        #   shift: [px, py]
+        # - ref: matrix_index_top
+        #   shift: [65, py]
+        # - ref: matrix_index_bottom
+        #   shift: [65, -py]
+        # - ref: thumb_outer_single
+        #   shift: [px, py]
+        # - ref: thumb_outer_single
+        #   shift: [px, -py]
+        # - ref: thumb_neutral_single
+        #   shift: [px-2, -py]
+        # - ref: thumb_neutral_single
+        #   shift: [-px, -py]
+        # - ref: matrix_inner_bottom
+        #   shift: [0, -py]
+        # - ref: matrix_inner_bottom
+        #   shift: [-px, -py]
+        # - ref: matrix_index_bottom
+        #   shift: [0, -py]
+        # - ref: matrix_middle_bottom
+        #   shift: [-14, -17.2]
+        # - ref: matrix_middle_bottom
+        #   shift: [-14, -51]
+        # - ref: matrix_middle_bottom
+        #   shift: [-30, -51]
+        # - ref: matrix_pinky_bottom
+        #   shift: [3.5, -py]
+  combo_left:
+    - name: board_left
+    - name: switches_left
+      operation: stack
