@@ -24,7 +24,7 @@ points:
     padding: ky + 0.4
   zones:
     matrix:
-      rotate: 7
+      rotate: 9.45
       columns:
         pinky:
           key.stagger: -9
@@ -112,9 +112,10 @@ outlines:
   trrs_left:
     - what: rectangle
       size: [6, 12]
+      adjust.rotate: 90
       where:
-        ref: matrix_inner_top
-        shift: [39, 6]
+        ref: matrix_inner_bottom
+        shift: [1.67kx, 6]
   trrs_right:
     - what: rectangle
       size: [6, 12]
@@ -129,62 +130,64 @@ outlines:
         shift: [-13, -37]
   board_left:
     - what: polygon
-      # fillet: 2
+      fillet: 2
       points:
         - ref: matrix_pinky_top
-          shift: [-0.5kx, 0.5ky]
+          shift: [-0.75kx, 0.75ky]
+        - ref: matrix_pinky_top
+          shift: [0.5kx, 0.75ky]
+
         - ref: matrix_ring_top
-          shift: [-0.5kx, 0.5ky]
-          # shift: [-kx-px,py]
+          shift: [-0.73kx, 0.75ky]
+        - ref: matrix_ring_top
+          shift: [0.49kx, 0.76ky]
+
         - ref: matrix_middle_top
-          shift: [-0.5kx, 0.5ky]
+          shift: [-0.72kx, 0.75ky]
         - ref: matrix_middle_top
-          shift: [0.5kx, 0.5ky]
-          # shift: [0,py+5]
+          shift: [0.7kx, 0.75ky]
+
+        - ref: matrix_index_top
+          shift: [-0.5kx, 0.75ky]
+        - ref: matrix_index_top
+          shift: [0.7kx, 0.75ky]
+
         - ref: matrix_inner_top
-          shift: [2.5kx, 0.5ky]
+          shift: [-0.32kx, 0.735ky]
+        - ref: matrix_inner_top
+          shift: [2kx, 0.735ky]
+
+        - ref: matrix_inner_bottom
+          shift: [2kx, -0.735ky]
+
         - ref: thumb_outer_single
-          shift: [0.5kx, 0]
-          # shift: [kx+kx,0]
-        # - ref: matrix_pinky_bottom
-        #   shift: [-kx-px, -py]
-        # - ref: matrix_pinky_top
-        #   shift: [-kx-px, py]
-        # - ref: matrix_pinky_top
-        #   shift: [px, py]
-        # - ref: matrix_middle_top
-        #   shift: [-kx-px-4.5, py]
-        # - ref: matrix_middle_top
-        #   shift: [32.8, py]
-        # - ref: matrix_index_top
-        #   shift: [px, py]
-        # - ref: matrix_index_top
-        #   shift: [65, py]
-        # - ref: matrix_index_bottom
-        #   shift: [65, -py]
-        # - ref: thumb_outer_single
-        #   shift: [px, py]
-        # - ref: thumb_outer_single
-        #   shift: [px, -py]
-        # - ref: thumb_neutral_single
-        #   shift: [px-2, -py]
-        # - ref: thumb_neutral_single
-        #   shift: [-px, -py]
-        # - ref: matrix_inner_bottom
-        #   shift: [0, -py]
-        # - ref: matrix_inner_bottom
-        #   shift: [-px, -py]
-        # - ref: matrix_index_bottom
-        #   shift: [0, -py]
-        # - ref: matrix_middle_bottom
-        #   shift: [-14, -17.2]
-        # - ref: matrix_middle_bottom
-        #   shift: [-14, -51]
-        # - ref: matrix_middle_bottom
-        #   shift: [-30, -51]
-        # - ref: matrix_pinky_bottom
-        #   shift: [3.5, -py]
+          shift: [0.75kx, 0.75ky]
+        - ref: thumb_outer_single
+          shift: [0.75kx, -0.75ky]
+        - ref: thumb_outer_single
+          shift: [-0.5kx, -0.75ky]
+
+        - ref: thumb_neutral_single
+          shift: [-0.5kx, -0.75ky]
+
+        - ref: thumb_inner_single
+          shift: [-0.75kx, -0.75ky]
+        # - ref: thumb_inner_single
+        #   shift: [-0.75kx, 0.75ky]
+        - ref: thumb_inner_single
+          shift: [-0.75kx, -0.2ky]
+
+        - ref: matrix_pinky_bottom
+          shift: [0.8kx, -0.8ky]
+        - ref: matrix_pinky_bottom
+          shift: [-0.8kx, -0.8ky]
   combo_left:
     - name: board_left
     - name: switches_left
+      operation: stack
+    - name: helios_left
+      operation: stack
+    - name: trrs_left
+      operation: stack
+    - name: keycaps_left
       operation: stack
