@@ -15,6 +15,7 @@ units:
   chocv1: 15
   px: (kx + 4) / 2
   py: (ky + 4) / 2
+  trrs_x: 1.97kx
 points:
   mirror: &mirror
     ref: thumb_outer_single
@@ -115,28 +116,49 @@ outlines:
       adjust.rotate: 90
       where:
         ref: matrix_inner_bottom
-        shift: [1.67kx, 6]
+        shift: [trrs_x, 6]
   trrs_right:
     - what: rectangle
       size: [6, 12]
       adjust.rotate: 90
       where:
         ref: mirror_matrix_inner_bottom
-        shift: [1.67kx, 6]
+        shift: [trrs_x, 6]
   trackball_breakout_right:
     - what: rectangle
       size: [2, 22]
       where:
         ref: mirror_matrix_ring_bottom
         shift: [1, -1.7ky]
+  holes_left:
+    - what: circle
+      radius: m2
+      where: matrix_pinky_top
+      adjust.shift: [0, ky-1.5m2]
+    - what: circle
+      radius: m2
+      where: matrix_index_top
+      adjust.shift: [0, ky-1.5m2]
+    - what: circle
+      radius: m2
+      where: matrix_inner_top
+      adjust.shift: [1.9kx+m2, 0.45ky]
+    - what: circle
+      radius: m2
+      where: matrix_inner_bottom
+      adjust.shift: [1.5kx, -0.5ky]
+    - what: circle
+      radius: m2
+      where: matrix_middle_bottom
+      adjust.shift: [0, -ky+1.5m2]
   board_left:
     - what: polygon
       fillet: 2
       points:
         - ref: matrix_pinky_top
-          shift: [-0.75kx, 0.75ky]
+          shift: [-0.75kx, ky+m2]
         - ref: matrix_pinky_top
-          shift: [0.5kx, 0.75ky]
+          shift: [0.5kx, ky+m2]
 
         - ref: matrix_ring_top
           shift: [-0.73kx, 0.75ky]
@@ -144,22 +166,22 @@ outlines:
           shift: [0.49kx, 0.76ky]
 
         - ref: matrix_middle_top
-          shift: [-0.72kx, 0.75ky]
+          shift: [-0.72kx, 0.71ky]
         - ref: matrix_middle_top
-          shift: [0.7kx, 0.75ky]
+          shift: [0.7kx, 0.71ky]
 
         - ref: matrix_index_top
-          shift: [-0.5kx, 0.75ky]
+          shift: [-0.5kx, ky+m2]
         - ref: matrix_index_top
-          shift: [0.7kx, 0.75ky]
+          shift: [0.7kx, ky+m2]
 
         - ref: matrix_inner_top
           shift: [-0.32kx, 0.735ky]
         - ref: matrix_inner_top
-          shift: [2kx, 0.735ky]
+          shift: [2.3kx, 0.735ky]
 
         - ref: matrix_inner_bottom
-          shift: [2kx, -0.735ky]
+          shift: [2.3kx, -0.735ky]
 
         - ref: thumb_outer_single
           shift: [0.75kx, 0.75ky]
@@ -180,14 +202,39 @@ outlines:
           shift: [0.8kx, -0.8ky]
         - ref: matrix_pinky_bottom
           shift: [-0.8kx, -0.8ky]
+  holes_right:
+    - what: circle
+      radius: m2
+      where: mirror_matrix_pinky_top
+      adjust.shift: [0, ky-1.5m2]
+    - what: circle
+      radius: m2
+      where: mirror_matrix_index_top
+      adjust.shift: [0, ky-1.5m2]
+    - what: circle
+      radius: m2
+      where: mirror_matrix_inner_top
+      adjust.shift: [1.9kx+m2, 0.45ky]
+    - what: circle
+      radius: m2
+      where: mirror_matrix_inner_bottom
+      adjust.shift: [1.5kx, -0.5ky]
+    - what: circle
+      radius: m2
+      where: mirror_matrix_pinky_bottom
+      adjust.shift: [.5kx, -ky]
+    - what: circle
+      radius: m2
+      where: mirror_matrix_middle_bottom
+      adjust.shift: [0, -ky+1.5m2]
   board_right:
     - what: polygon
       fillet: 2
       points:
         - ref: mirror_matrix_pinky_top
-          shift: [-0.75kx, 0.75ky]
+          shift: [-0.75kx, ky+m2]
         - ref: mirror_matrix_pinky_top
-          shift: [0.5kx, 0.75ky]
+          shift: [0.5kx, ky+m2]
 
         - ref: mirror_matrix_ring_top
           shift: [-0.73kx, 0.75ky]
@@ -195,22 +242,22 @@ outlines:
           shift: [0.49kx, 0.76ky]
 
         - ref: mirror_matrix_middle_top
-          shift: [-0.72kx, 0.75ky]
+          shift: [-0.72kx, 0.71ky]
         - ref: mirror_matrix_middle_top
-          shift: [0.7kx, 0.75ky]
+          shift: [0.7kx, 0.71ky]
 
         - ref: mirror_matrix_index_top
-          shift: [-0.5kx, 0.75ky]
+          shift: [-0.5kx, ky+m2]
         - ref: mirror_matrix_index_top
-          shift: [0.7kx, 0.75ky]
+          shift: [0.7kx, ky+m2]
 
         - ref: mirror_matrix_inner_top
           shift: [-0.32kx, 0.735ky]
         - ref: mirror_matrix_inner_top
-          shift: [2kx, 0.735ky]
+          shift: [2.3kx, 0.735ky]
 
         - ref: mirror_matrix_inner_bottom
-          shift: [2kx, -0.735ky]
+          shift: [2.3kx, -0.735ky]
 
         - ref: mirror_thumb_outer_single
           shift: [0.75kx, 0.75ky]
@@ -235,15 +282,17 @@ outlines:
           shift: [0, -43]
 
         - ref: mirror_matrix_pinky_bottom
-          shift: [0.5kx, -1.8ky]
+          shift: [0.4kx, -1.8ky]
         - ref: mirror_matrix_pinky_bottom
-          shift: [0.5kx, -.8ky]
+          shift: [0, -.8ky]
         - ref: mirror_matrix_pinky_bottom
           shift: [-0.8kx, -.8ky]
 
   combo_left:
     - name: board_left
     - name: switches_left
+      operation: stack
+    - name: holes_left
       operation: stack
     - name: helios_left
       operation: stack
@@ -254,6 +303,8 @@ outlines:
   combo_right:
     - name: board_right
     - name: switches_right
+      operation: stack
+    - name: holes_right
       operation: stack
     - name: trackball_breakout_right
       operation: stack
@@ -267,3 +318,4 @@ outlines:
     - name: combo_left
     - name: combo_right
       operation: stack
+      adjust.shift: [20, 0]
