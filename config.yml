@@ -25,6 +25,8 @@ points:
     padding: ky + 0.4
   zones:
     matrix:
+      anchor:
+        shift: [150, -150]
       rotate: 9.45
       columns:
         pinky:
@@ -454,17 +456,34 @@ pcbs:
   Klorball35_left:
     outlines:
       - outline: board_left
-        layer: Edge.Cuts
-      - outline: switches_left
-        layer: User.Comments
-      - outline: keycaps_left
-        layer: User.Comments
-      - outline: holes_left
-        layer: User.Comments
-      - outline: helios_left
-        layer: User.Comments
-      - outline: trrs_left
-        layer: User.Comments
+    footprints:
+      - where: /(^matrix_.*)|(^thumb_.*)/
+        what: choc
+        params:
+          hotswap: true
+          reverse: false
+          from: "{{colrow}}" # Automatically name the net based on the column/row
+          to: "{{column_net}}"
+      - where: matrix_inner_top
+        what: promicro
+        params:
+          designator: "Helios"
+        adjust:
+          rotate: -90
+          shift: [22, -5.3]
+
+        # layer: Edge.Cuts
+
+      # - outline: switches_left
+      #   layer: User.Comments
+      # - outline: keycaps_left
+      #   layer: User.Comments
+      # - outline: holes_left
+      #   layer: User.Comments
+      # - outline: helios_left
+      #   layer: User.Comments
+      # - outline: trrs_left
+      #   layer: User.Comments
   Klorball35_right:
     outlines:
       - outline: board_right
