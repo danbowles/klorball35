@@ -124,12 +124,18 @@ outlines:
       where:
         ref: mirror_matrix_inner_bottom
         shift: [trrs_x, 6]
+  # trackball_breakout_right:
+  #   - what: rectangle
+  #     size: [2, 22]
+  #     where:
+  #       ref: mirror_matrix_ring_bottom
+  #       shift: [1, -1.7ky]
   trackball_breakout_right:
     - what: rectangle
       size: [2, 22]
       where:
-        ref: mirror_matrix_ring_bottom
-        shift: [1, -1.7ky]
+        ref: mirror_matrix_middle_bottom
+        shift: [-16, -37]
   holes_left:
     - what: circle
       radius: m2
@@ -202,6 +208,58 @@ outlines:
           shift: [0.8kx, -0.8ky]
         - ref: matrix_pinky_bottom
           shift: [-0.8kx, -0.8ky]
+  plate_left:
+    - what: polygon
+      fillet: 2
+      points:
+        - ref: matrix_pinky_top
+          shift: [-0.75kx, ky+m2]
+        - ref: matrix_pinky_top
+          shift: [0.5kx, ky+m2]
+
+        - ref: matrix_ring_top
+          shift: [-0.73kx, 0.75ky]
+        - ref: matrix_ring_top
+          shift: [0.49kx, 0.76ky]
+
+        - ref: matrix_middle_top
+          shift: [-0.72kx, 0.71ky]
+        - ref: matrix_middle_top
+          shift: [0.7kx, 0.71ky]
+
+        - ref: matrix_index_top
+          shift: [-0.5kx, ky+m2]
+        - ref: matrix_index_top
+          shift: [0.7kx, ky+m2]
+
+        - ref: matrix_inner_top
+          shift: [-0.32kx, 0.735ky]
+        - ref: matrix_inner_top
+          shift: [2.3kx, 0.735ky]
+
+        - ref: matrix_inner_bottom
+          shift: [2.3kx, -0.735ky]
+
+        - ref: thumb_outer_single
+          shift: [0.75kx, 0.75ky]
+        - ref: thumb_outer_single
+          shift: [0.75kx, -0.75ky]
+        - ref: thumb_outer_single
+          shift: [-0.5kx, -0.75ky]
+
+        - ref: thumb_neutral_single
+          shift: [-0.5kx, -0.75ky]
+
+        - ref: thumb_inner_single
+          shift: [-0.75kx, -0.75ky]
+        - ref: thumb_inner_single
+          shift: [-0.75kx, -0.2ky]
+
+        - ref: matrix_pinky_bottom
+          shift: [0.8kx, -0.8ky]
+        - ref: matrix_pinky_bottom
+          shift: [-0.8kx, -0.8ky]
+
   holes_right:
     - what: circle
       radius: m2
@@ -276,10 +334,14 @@ outlines:
         - ref: mirror_matrix_middle_bottom
           shift: [0, -18]
 
-        - ref: mirror_matrix_ring_bottom
-          shift: [0, -12]
-        - ref: mirror_matrix_ring_bottom
-          shift: [0, -43]
+        # - ref: mirror_matrix_ring_bottom
+        #   shift: [0, -12]
+        - ref: mirror_matrix_middle_bottom
+          shift: [-17, -17.2]
+        - ref: mirror_matrix_middle_bottom
+          shift: [-17, -51]
+        # - ref: mirror_matrix_ring_bottom
+        #   shift: [0, -43]
 
         - ref: mirror_matrix_pinky_bottom
           shift: [0.4kx, -1.8ky]
@@ -287,6 +349,71 @@ outlines:
           shift: [0, -.8ky]
         - ref: mirror_matrix_pinky_bottom
           shift: [-0.8kx, -.8ky]
+  plate_right:
+    - what: polygon
+      fillet: 2
+      points:
+        - ref: mirror_matrix_pinky_top
+          shift: [-0.75kx, ky+m2]
+        - ref: mirror_matrix_pinky_top
+          shift: [0.5kx, ky+m2]
+
+        - ref: mirror_matrix_ring_top
+          shift: [-0.73kx, 0.75ky]
+        - ref: mirror_matrix_ring_top
+          shift: [0.49kx, 0.76ky]
+
+        - ref: mirror_matrix_middle_top
+          shift: [-0.72kx, 0.71ky]
+        - ref: mirror_matrix_middle_top
+          shift: [0.7kx, 0.71ky]
+
+        - ref: mirror_matrix_index_top
+          shift: [-0.5kx, ky+m2]
+        - ref: mirror_matrix_index_top
+          shift: [0.7kx, ky+m2]
+
+        - ref: mirror_matrix_inner_top
+          shift: [-0.32kx, 0.735ky]
+        - ref: mirror_matrix_inner_top
+          shift: [2.3kx, 0.735ky]
+
+        - ref: mirror_matrix_inner_bottom
+          shift: [2.3kx, -0.735ky]
+
+        - ref: mirror_thumb_outer_single
+          shift: [0.75kx, 0.75ky]
+        - ref: mirror_thumb_outer_single
+          shift: [0.75kx, -0.75ky]
+        - ref: mirror_thumb_outer_single
+          shift: [-0.5kx, -0.75ky]
+
+        - ref: mirror_thumb_neutral_single
+          shift: [-0.7kx, -0.75ky]
+
+        - ref: mirror_matrix_middle_bottom
+          shift: [0, -49]
+
+        - ref: mirror_matrix_middle_bottom
+          shift: [-17, -51]
+
+        - ref: mirror_matrix_pinky_bottom
+          shift: [.4kx, -1.8ky]
+        - ref: mirror_matrix_pinky_bottom
+          shift: [0, -.8ky]
+        - ref: mirror_matrix_pinky_bottom
+          shift: [-.8kx, -.8ky]
+  plate_holes_right:
+    - what: circle
+      radius: m2
+      where:
+        ref: mirror_matrix_middle_bottom
+        shift: [-3, -29]
+    - what: circle
+      radius: m2
+      where:
+        ref: mirror_matrix_middle_bottom
+        shift: [-3, -45]
 
   combo_left:
     - name: board_left
@@ -306,6 +433,10 @@ outlines:
       operation: stack
     - name: holes_right
       operation: stack
+    # - name: plate_right
+    #   operation: stack
+    - name: plate_holes_right
+      operation: stack
     - name: trackball_breakout_right
       operation: stack
     - name: helios_right
@@ -319,3 +450,50 @@ outlines:
     - name: combo_right
       operation: stack
       adjust.shift: [20, 0]
+pcbs:
+  Klorball35_left:
+    outlines:
+      - outline: board_left
+        layer: Edge.Cuts
+      - outline: switches_left
+        layer: User.Comments
+      - outline: keycaps_left
+        layer: User.Comments
+      - outline: holes_left
+        layer: User.Comments
+      - outline: helios_left
+        layer: User.Comments
+      - outline: trrs_left
+        layer: User.Comments
+  Klorball35_right:
+    outlines:
+      - outline: board_right
+        layer: Edge.Cuts
+      - outline: switches_right
+        layer: User.Comments
+      - outline: keycaps_right
+        layer: User.Comments
+      - outline: holes_right
+        layer: User.Comments
+      - outline: trackball_breakout_right
+        layer: User.Comments
+      - outline: helios_right
+        layer: User.Comments
+      - outline: trrs_right
+        layer: User.Comments
+  Klorball35_plate_left:
+    outlines:
+      - outline: plate_left
+        layer: Edge.Cuts
+      - outline: holes_left
+        layer: User.Comments
+      # - outline: plate_holes
+      #   layer: User.Comments
+  Klorball35_plate_right:
+    outlines:
+      - outline: plate_right
+        layer: Edge.Cuts
+      - outline: holes_right
+        layer: User.Comments
+      - outline: plate_holes_right
+        layer: User.Comments
