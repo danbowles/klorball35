@@ -8,10 +8,10 @@
     ],
     "hidden_nets": [
       "",
-      "/TRRS_TX",
       "GND",
+      "/TRRS_TX",
+      "unconnected-(J1-PadR1)",
       "+3V3",
-      "/TRRS_RX",
       "/PINKY_TOP",
       "/PINKY_HOME",
       "/PINKY_BOTTOM",
@@ -21,7 +21,6 @@
       "/MIDDLE_TOP",
       "/MIDDLE_HOME",
       "/MIDDLE_BOTTOM",
-      "/MIDDLE_THUMB",
       "/INDEX_TOP",
       "/INDEX_HOME",
       "/INDEX_BOTTOM",
@@ -30,20 +29,21 @@
       "/INNER_HOME",
       "/INNER_BOTTOM",
       "/INNER_THUMB",
-      "unconnected-(U1-P11-Pad30)",
-      "unconnected-(U1-P10-Pad31)",
-      "unconnected-(U1-5V-Pad13)",
-      "unconnected-(U1-P27-Pad19)",
-      "unconnected-(U1-P10-Pad31)_1",
-      "unconnected-(U1-P11-Pad30)_1",
-      "unconnected-(U1-P29-Pad17)",
-      "unconnected-(U1-P29-Pad17)_1",
+      "/SCK",
+      "/CS",
       "unconnected-(U1-RST-Pad15)",
+      "/MISO",
+      "unconnected-(U1-P1-Pad2)",
+      "unconnected-(U1-5V-Pad13)",
+      "/MOSI",
+      "unconnected-(U1-P1-Pad2)_1",
+      "unconnected-(U1-P2-Pad5)",
       "unconnected-(U1-5V-Pad13)_1",
-      "unconnected-(U1-P28-Pad18)",
+      "unconnected-(U1-P10-Pad31)",
       "unconnected-(U1-RST-Pad15)_1",
-      "unconnected-(U1-P28-Pad18)_1",
-      "unconnected-(U1-P27-Pad19)_1"
+      "unconnected-(U1-P2-Pad5)_1",
+      "unconnected-(U1-P10-Pad31)_1",
+      "unconnected-(J2-Pin_5-Pad5)"
     ],
     "high_contrast_mode": 0,
     "net_color_mode": 1,
@@ -89,7 +89,7 @@
       "conflict_shadows",
       "shapes"
     ],
-    "visible_layers": "00000000_00000000_55555555_575d5554",
+    "visible_layers": "00000000_00000000_55555555_57555571",
     "zone_display_mode": 0
   },
   "git": {
@@ -98,7 +98,7 @@
     "ssh_key": ""
   },
   "meta": {
-    "filename": "klorball35_left.kicad_prl",
+    "filename": "klorball35_right.kicad_prl",
     "version": 5
   },
   "net_inspector_panel": {

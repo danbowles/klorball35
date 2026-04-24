@@ -26,8 +26,8 @@ points:
   zones:
     matrix:
       anchor:
-        shift: [150, -150]
-      rotate: 9.45
+        shift: [150,-150]
+      # rotate: 9.45
       columns:
         pinky:
           key.stagger: -9
@@ -142,23 +142,23 @@ outlines:
     - what: circle
       radius: m2
       where: matrix_pinky_top
-      adjust.shift: [0, ky-1.5m2]
+      adjust.shift: [0,ky-1.5m2]
     - what: circle
       radius: m2
       where: matrix_index_top
-      adjust.shift: [0, ky-1.5m2]
+      adjust.shift: [0,ky-1.5m2]
     - what: circle
       radius: m2
       where: matrix_inner_top
-      adjust.shift: [1.9kx+m2, 0.45ky]
+      adjust.shift: [1.9kx+m2,0.45ky]
     - what: circle
       radius: m2
       where: matrix_inner_bottom
-      adjust.shift: [1.5kx, -0.5ky]
+      adjust.shift: [1.5kx,-0.5ky]
     - what: circle
       radius: m2
       where: matrix_middle_bottom
-      adjust.shift: [0, -ky+1.5m2]
+      adjust.shift: [0,-ky+1.5m2]
   board_left:
     - what: polygon
       fillet: 2
@@ -266,11 +266,11 @@ outlines:
     - what: circle
       radius: m2
       where: mirror_matrix_pinky_top
-      adjust.shift: [0, ky-1.5m2]
+      adjust.shift: [0,ky-1.5m2]
     - what: circle
       radius: m2
       where: mirror_matrix_index_top
-      adjust.shift: [0, ky-1.5m2]
+      adjust.shift: [0,ky-1.5m2]
     - what: circle
       radius: m2
       where: mirror_matrix_inner_top
@@ -278,15 +278,15 @@ outlines:
     - what: circle
       radius: m2
       where: mirror_matrix_inner_bottom
-      adjust.shift: [1.5kx, -0.5ky]
+      adjust.shift: [1.5kx,-0.5ky]
     - what: circle
       radius: m2
       where: mirror_matrix_pinky_bottom
-      adjust.shift: [.5kx, -ky]
+      adjust.shift: [.5kx,-ky]
     - what: circle
       radius: m2
       where: mirror_matrix_middle_bottom
-      adjust.shift: [0, -ky+1.5m2]
+      adjust.shift: [0,-ky+1.5m2]
   board_right:
     - what: polygon
       fillet: 2
@@ -451,39 +451,43 @@ outlines:
     - name: combo_left
     - name: combo_right
       operation: stack
-      adjust.shift: [20, 0]
+      adjust.shift: [20,0]
 pcbs:
   Klorball35_left:
-    outlines:
-      - outline: board_left
-    footprints:
-      - where: /(^matrix_.*)|(^thumb_.*)/
-        what: choc
-        params:
-          hotswap: true
-          reverse: false
-          from: "{{colrow}}" # Automatically name the net based on the column/row
-          to: "{{column_net}}"
-      - where: matrix_inner_top
-        what: promicro
-        params:
-          designator: "Helios"
-        adjust:
-          rotate: -90
-          shift: [22, -5.3]
-
-        # layer: Edge.Cuts
-
-      # - outline: switches_left
-      #   layer: User.Comments
-      # - outline: keycaps_left
-      #   layer: User.Comments
-      # - outline: holes_left
-      #   layer: User.Comments
-      # - outline: helios_left
-      #   layer: User.Comments
-      # - outline: trrs_left
-      #   layer: User.Comments
+    outlines: 
+      main:
+        outline: board_left
+        layer: Edge.Cuts
+      switches:
+        outline: switches_left        # The outline containing your key squares
+        layer: Cmts.User # This puts them in KiCad as reference lines only
+      keys:
+        outline: keycaps_left
+        layer: Cmts.User
+      holes:
+        outline: holes_left
+        layer: Cmts.User
+      helios:
+        outline: helios_left
+        layer: Cmts.User
+      trrs:
+        outline: trrs_left
+        layer: Cmts.User
+    # footprints:
+    #   - where: /(^matrix_.*)|(^thumb_.*)/
+    #     what: choc
+    #     params:
+    #       hotswap: true
+    #       reverse: false
+    #       from: "{{colrow}}" # Automatically name the net based on the column/row
+    #       to: "{{column_net}}"
+    #   - where: matrix_inner_top
+    #     what: promicro
+    #     params:
+    #       designator: "Helios"
+    #     adjust:
+    #       rotate: -90
+    #       shift: [22, -5.3]
   Klorball35_right:
     outlines:
       - outline: board_right
@@ -501,13 +505,13 @@ pcbs:
       - outline: trrs_right
         layer: User.Comments
   Klorball35_plate_left:
-    outlines:
-      - outline: plate_left
+    outlines: 
+      main:
+        outline: board_left
         layer: Edge.Cuts
-      - outline: holes_left
-        layer: User.Comments
-      # - outline: plate_holes
-      #   layer: User.Comments
+      holes:
+        outline: holes_left
+        layer: Cmts.User
   Klorball35_plate_right:
     outlines:
       - outline: plate_right

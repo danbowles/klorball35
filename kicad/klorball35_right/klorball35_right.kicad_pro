@@ -54,7 +54,7 @@
       "diff_pair_dimensions": [],
       "drc_exclusions": [
         [
-          "starved_thermal|278620000|77170000|443dd572-5e90-4467-8ba5-3a24af12d93b|579f7c8a-50a6-4772-b3c4-686909db0b3c|F.Cu",
+          "starved_thermal|178297849|98053905|bebf2aeb-8fff-4acd-8a39-c124ae05c310|20a6d02f-3d47-4247-89a2-093c4461519c|F.Cu",
           ""
         ]
       ],
@@ -457,7 +457,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "klorball35_left.kicad_pro",
+    "filename": "klorball35_right.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -473,7 +473,7 @@
         "microvia_drill": 0.1,
         "name": "Default",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 2147483647,
+        "priority": -1,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.25,
         "via_diameter": 0.8,
