@@ -2387,7 +2387,7 @@
 		)
 		(uuid "51c943ac-9140-4a29-a529-61ad20ff6cf2")
 	)
-	(label "INNER_THUMB"
+	(label "INDEX_THUMB"
 		(at 16.51 90.17 0)
 		(effects
 			(font
@@ -2497,7 +2497,7 @@
 		)
 		(uuid "a9bf368c-b16f-4ec8-996d-c0ee557ee96d")
 	)
-	(label "INDEX_THUMB"
+	(label "INNER_THUMB"
 		(at 16.51 82.55 0)
 		(effects
 			(font

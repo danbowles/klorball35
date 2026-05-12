@@ -33,15 +33,15 @@
       "/CS",
       "unconnected-(U1-RST-Pad15)",
       "/MISO",
-      "unconnected-(U1-P1-Pad2)",
+      "unconnected-(U1-P9-Pad12)",
       "unconnected-(U1-5V-Pad13)",
       "/MOSI",
-      "unconnected-(U1-P1-Pad2)_1",
-      "unconnected-(U1-P2-Pad5)",
+      "unconnected-(U1-P9-Pad12)_1",
+      "unconnected-(U1-P8-Pad11)",
       "unconnected-(U1-5V-Pad13)_1",
       "unconnected-(U1-P10-Pad31)",
       "unconnected-(U1-RST-Pad15)_1",
-      "unconnected-(U1-P2-Pad5)_1",
+      "unconnected-(U1-P8-Pad11)_1",
       "unconnected-(U1-P10-Pad31)_1",
       "unconnected-(J2-Pin_5-Pad5)"
     ],
@@ -89,7 +89,7 @@
       "conflict_shadows",
       "shapes"
     ],
-    "visible_layers": "00000000_00000000_55555555_57555571",
+    "visible_layers": "00000000_00000000_55555555_575d5575",
     "zone_display_mode": 0
   },
   "git": {
