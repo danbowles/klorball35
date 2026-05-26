@@ -37,9 +37,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 1.0,
+          "drill": 0.0,
           "height": 1.8,
-          "width": 1.8
+          "width": 3.5
         },
         "silk_line_width": 0.12,
         "silk_text_italic": false,
@@ -52,12 +52,7 @@
         }
       },
       "diff_pair_dimensions": [],
-      "drc_exclusions": [
-        [
-          "starved_thermal|278620000|77170000|443dd572-5e90-4467-8ba5-3a24af12d93b|579f7c8a-50a6-4772-b3c4-686909db0b3c|F.Cu",
-          ""
-        ]
-      ],
+      "drc_exclusions": [],
       "meta": {
         "filename": "board_design_settings.json",
         "version": 2

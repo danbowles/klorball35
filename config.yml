@@ -26,8 +26,8 @@ points:
   zones:
     matrix:
       anchor:
-        shift: [150,-150]
-      # rotate: 9.45
+        shift: [150, -150]
+      rotate: 9.45
       columns:
         pinky:
           key.stagger: -9
@@ -142,23 +142,23 @@ outlines:
     - what: circle
       radius: m2
       where: matrix_pinky_top
-      adjust.shift: [0,ky-1.5m2]
+      adjust.shift: [0, ky-1.5m2]
     - what: circle
       radius: m2
       where: matrix_index_top
-      adjust.shift: [0,ky-1.5m2]
+      adjust.shift: [0, ky-1.5m2]
     - what: circle
       radius: m2
       where: matrix_inner_top
-      adjust.shift: [1.9kx+m2,0.45ky]
+      adjust.shift: [1.9kx+m2, 0.45ky]
     - what: circle
       radius: m2
       where: matrix_inner_bottom
-      adjust.shift: [1.5kx,-0.5ky]
+      adjust.shift: [1.5kx, -0.5ky]
     - what: circle
       radius: m2
       where: matrix_middle_bottom
-      adjust.shift: [0,-ky+1.5m2]
+      adjust.shift: [0, -ky+1.5m2]
   board_left:
     - what: polygon
       fillet: 2
@@ -266,11 +266,11 @@ outlines:
     - what: circle
       radius: m2
       where: mirror_matrix_pinky_top
-      adjust.shift: [0,ky-1.5m2]
+      adjust.shift: [0, ky-1.5m2]
     - what: circle
       radius: m2
       where: mirror_matrix_index_top
-      adjust.shift: [0,ky-1.5m2]
+      adjust.shift: [0, ky-1.5m2]
     - what: circle
       radius: m2
       where: mirror_matrix_inner_top
@@ -278,15 +278,15 @@ outlines:
     - what: circle
       radius: m2
       where: mirror_matrix_inner_bottom
-      adjust.shift: [1.5kx,-0.5ky]
+      adjust.shift: [1.5kx, -0.5ky]
     - what: circle
       radius: m2
       where: mirror_matrix_pinky_bottom
-      adjust.shift: [.5kx,-ky]
+      adjust.shift: [.5kx, -ky]
     - what: circle
       radius: m2
       where: mirror_matrix_middle_bottom
-      adjust.shift: [0,-ky+1.5m2]
+      adjust.shift: [0, -ky+1.5m2]
   board_right:
     - what: polygon
       fillet: 2
@@ -435,8 +435,8 @@ outlines:
       operation: stack
     - name: holes_right
       operation: stack
-    # - name: plate_right
-    #   operation: stack
+    - name: plate_right
+      operation: stack
     - name: plate_holes_right
       operation: stack
     - name: trackball_breakout_right
@@ -451,15 +451,15 @@ outlines:
     - name: combo_left
     - name: combo_right
       operation: stack
-      adjust.shift: [20,0]
+      adjust.shift: [20, 0]
 pcbs:
   Klorball35_left:
-    outlines: 
+    outlines:
       main:
         outline: board_left
         layer: Edge.Cuts
       switches:
-        outline: switches_left        # The outline containing your key squares
+        outline: switches_left # The outline containing your key squares
         layer: Cmts.User # This puts them in KiCad as reference lines only
       keys:
         outline: keycaps_left
@@ -493,19 +493,19 @@ pcbs:
       - outline: board_right
         layer: Edge.Cuts
       - outline: switches_right
-        layer: User.Comments
+        layer: Cmts.User
       - outline: keycaps_right
-        layer: User.Comments
+        layer: Cmts.User
       - outline: holes_right
-        layer: User.Comments
+        layer: Cmts.User
       - outline: trackball_breakout_right
-        layer: User.Comments
+        layer: Cmts.User
       - outline: helios_right
-        layer: User.Comments
+        layer: Cmts.User
       - outline: trrs_right
-        layer: User.Comments
+        layer: Cmts.User
   Klorball35_plate_left:
-    outlines: 
+    outlines:
       main:
         outline: board_left
         layer: Edge.Cuts
@@ -517,6 +517,6 @@ pcbs:
       - outline: plate_right
         layer: Edge.Cuts
       - outline: holes_right
-        layer: User.Comments
+        layer: Cmts.User
       - outline: plate_holes_right
-        layer: User.Comments
+        layer: Cmts.User
